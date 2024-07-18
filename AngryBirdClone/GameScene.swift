@@ -17,10 +17,12 @@ class GameScene: SKScene {
         bird = childNode(withName: "bird") as! SKSpriteNode
         
         let birdTexture = SKTexture(imageNamed: "bird")
-        bird.physicsBody = SKPhysicsBody(circleOfRadius: birdTexture.size().height / 10)
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: birdTexture.size().height / 13)
         bird.physicsBody?.affectedByGravity = true
         bird.physicsBody?.isDynamic = true
         bird.physicsBody?.mass = 0.5
+        
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
     }
     
     
